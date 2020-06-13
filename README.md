@@ -1,6 +1,6 @@
 # ticketing_app\
 
-kubectl config view
+`kubectl config view`
 
 you can switch into local k8s cluster: 
 kubectl config use-context docker-desktop 
