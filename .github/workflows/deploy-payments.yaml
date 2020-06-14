@@ -17,6 +17,7 @@ jobs:
         env:
           DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
           DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+      - run: docker tag payments cy235/payments
       - run: docker push cy235/payments
       - uses: digitalocean/action-doctl@v2
         with:
