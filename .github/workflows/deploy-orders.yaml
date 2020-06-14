@@ -12,13 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: cd orders&& docker build -t cy235/orders .
+      - run: cd orders&& docker build -t cy235/orders:$DTAG .
       - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
         env:
           DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
           DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-      - run: docker tag first-image cy235/orders:first-image
-      - run: docker push cy235/orders:first-image
+      - run: docker push cy235/orders:$DTAG
       - uses: digitalocean/action-doctl@v2
         with:
           token: ${{secrets.DIGITALOCEAN_ACCESS_TOKEN}}
