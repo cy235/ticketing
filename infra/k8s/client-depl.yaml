@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+apiVersion: apps/v1 #####
+=======
 apiVersion: apps/v1 #
+>>>>>>> 7dc647455c40f846a12a67fb24472c156163566b
 kind: Deployment
 metadata:
   name: client-depl
