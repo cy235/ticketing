@@ -40,5 +40,9 @@ kubectl create secret generic stripe-secret --from-literal=STRIPE_KEY=YOURKEY
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/do/deploy.yaml
 ```
+To observe the whole process of CI/CD: 
+* remove all the images from Docker Hub
+* update the `deploy-manifests.yaml`,`infra`, and `auth`, `client`, `expiration`, `tickets`, `orders`, `payments` files respectively, and push them into dev branch, then create a pull request to merge the dev branch into the master branch
 
-update the `deploy-manifests.yaml`, `auth`, `client`, `expiration`, `tickets`, `orders`, `payments` files respectively push them into dev branch, then create a pull request to merge the dev branch into the master branch
+If only deploy images from DockerHub to k8s only:
+update the `deploy-manifests.yaml` and the `infra` files respectively, and push them into master branch
