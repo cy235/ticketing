@@ -13,3 +13,7 @@ or into digital ocean k8s cluster:
 Switched to context "do-nyc1-ticketing".
 `kubectl create secret generic jwt-secret  --from-literal=JWT_KEY=sadf78sfas8f76f86faf6`
 
+`kubectl create secret generic stripe-secret --from-literal=STRIPE_KEY=YOURKEY`
+
+`kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/do/deploy.yaml`
+
