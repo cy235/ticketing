@@ -1,4 +1,4 @@
-name: deploy-manifests  #####################asassaas
+name: deploy-manifests  #####################final correct
 
 on:
   push:

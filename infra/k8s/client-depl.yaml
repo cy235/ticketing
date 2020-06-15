@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-apiVersion: apps/v1 #####
-=======
-apiVersion: apps/v1 #
->>>>>>> 7dc647455c40f846a12a67fb24472c156163566b
+apiVersion: apps/v1 ###
+
 kind: Deployment
 metadata:
   name: client-depl
