@@ -41,4 +41,4 @@ kubectl create secret generic stripe-secret --from-literal=STRIPE_KEY=YOURKEY
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/do/deploy.yaml
 ```
 
-update `deploy-manifests.yaml` and push it to master branch, update the `auth`, `client`, `expiration`, `tickets`, `orders`, `payments` files respectively push them into dev branch, then create a pull request to merge the dev branch into the master branch
+update the `deploy-manifests.yaml`, `auth`, `client`, `expiration`, `tickets`, `orders`, `payments` files respectively push them into dev branch, then create a pull request to merge the dev branch into the master branch
