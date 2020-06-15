@@ -1,4 +1,4 @@
-# ticketing_app\
+# ticketing\
 get the token from API token from DigitalOcean, which is named as doctl2
 `a0ca66ad811be78ebaaa2b831d6619f8e12a396c741a0907dd4f6ed12cac1682`
 then
