@@ -1,4 +1,4 @@
-name: deploy-manifests  #####################final correct
+name: deploy-manifests  #####################final correct!!!
 
 on:
   push:
