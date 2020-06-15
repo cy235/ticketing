@@ -46,3 +46,9 @@ To observe the whole process of CI/CD:
 
 If only deploy images from DockerHub to k8s only:
 update the `deploy-manifests.yaml` and the `infra` files respectively, and push them into master branch
+
+
+If you want to delete all the deployments in k8s
+```
+kubectl delete -f infra/k8s && kubectl delete -f infra/k8s-prod
+```
