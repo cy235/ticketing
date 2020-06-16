@@ -1,7 +1,10 @@
 # Build Ticketing Web Application with Microservices 
 ## Overview
 In this project, we build a ticket ordering web application with React, Node, Express, and MongoDB, which consisting of 6 microservices. We leverage Github to continuously integrate the web application images and delivered them into the Docker Hub, then continuously deployed them into the Kubernetes cluster. The following figure shows the development workflow
-![image](https://github.com/cy235/ticketing/blob/master/images/local_git.jpg)
+<p align="center">
+  <img width="460" height="300" src="https://github.com/cy235/ticketing/blob/master/images/local_git.jpg">
+</p>
+
 
 This web application consits of 6 microservices, i.e., `orders`,`tickets`,`payments`,`client`, `expiration` (the ordering will be expired if the information is not filled within the given time), and `auth`(authentication), which are shown in the following figure
 
