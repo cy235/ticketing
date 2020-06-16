@@ -32,9 +32,9 @@ save the name of Kubernetes cluster in the config file <br>
 doctl kubernetes cluster kubeconfig save ticketing 
 ```
 
-Then go to github and add the DOCKER_USERNAME and DOCKER_PASSWORD in the secretes
-add DIGITALOCEAN_ACCESS_TOKEN in the secretes,
-where DIGITALOCEAN_ACCESS_TOKEN value is created under the DigitalOcean API token named `github_access_token`.
+Then go to github and add the `DOCKER_USERNAME` and `DOCKER_PASSWORD` in the secretes
+add `DIGITALOCEAN_ACCESS_TOKEN` in the secretes,
+where `DIGITALOCEAN_ACCESS_TOKEN` value is created under the DigitalOcean API token named `github_access_token`.
 
 We can observe the available K8s clusters 
 `kubectl config view`
@@ -48,7 +48,7 @@ or into DigitalOcean k8s cluster:
 kubectl config use-context do-nyc1-ticketing
 ```
 
-Now, we switched to context "do-nyc1-ticketing", and create two secrets, json web token and stripe API keys, respectively
+Now, we switched to context `do-nyc1-ticketing`, and create two secrets, json web token and stripe API keys, respectively
 
 
 ```
