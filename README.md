@@ -8,7 +8,7 @@ In this project, we build a ticket ordering web application with React, Node, Ex
 
 This web application consits of 6 microservices, i.e., `orders`,`tickets`,`payments`,`client`, `expiration` (the ordering will be expired if the information is not filled within the given time), and `auth`(authentication), which are shown in the following figure
 <p align="center">
-  <img width="460" src="https://github.com/cy235/ticketing/blob/master/images/micro_service.jpg">
+  <img width="260" src="https://github.com/cy235/ticketing/blob/master/images/micro_service.jpg">
 </p>
 
 
