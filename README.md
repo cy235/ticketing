@@ -20,35 +20,35 @@ The deployment plan is shown in the following figure
 where each single micro service can be continuously built and deployed, the infra file is responsible for deploying the whole applcation (including all micro services). 
 
 ## Setup
-We employ the DigitalOcean as our Iaas provider.
-First we need to create a Kubernetes cluster in DigitalOcean, then get the token from API token from DigitalOcean, which is named as doctl2
-`a0ca66ad811be78ebaaa2b831d6619f8e12a396c741a0907dd4f6ed12cac1682`
-then
-```
-doctl auth init -t a0ca66ad811be78ebaaa2b831d6619f8e12a396c741a0907dd4f6ed12cac1682
-```
+We employ the DigitalOcean as our Iaas provider. First we need to create a Kubernetes cluster in DigitalOcean, then get the token from API token from DigitalOcean, which is named as doctl2 `a0ca66ad811be78ebaaa2b831d6619f8e12a396c741a0907dd4f6ed12cac1682` <br>
+
+then initialize the doctl <br>
 
 ```
-doctl kubernetes cluster kubeconfig save ticketing
+doctl auth init -t a0ca66ad811be78ebaaa2b831d6619f8e12a396c741a0907dd4f6ed12cac1682 
+```
+save the name of Kubernetes cluster in the config file <br>
+```
+doctl kubernetes cluster kubeconfig save ticketing 
 ```
 
+Then go to github and add the DOCKER_USERNAME and DOCKER_PASSWORD in the secretes
+add DIGITALOCEAN_ACCESS_TOKEN in the secretes,
+where DIGITALOCEAN_ACCESS_TOKEN value is created under the DigitalOcean API token named `github_access_token`.
 
-then go to github and add the DOCKER_USERNAME and DOCKER_PASSWORD in the secretes
-add DIGITALOCEAN_ACCESS_TOKEN in the secretes
-where DIGITALOCEAN_ACCESS_TOKEN value is created under the DigitalOcean API token named `github_access_token`
-
+We can observe the available K8s clusters 
 `kubectl config view`
 
-you can switch into local k8s cluster: 
+We can switch into local k8s cluster: 
 ```
 kubectl config use-context docker-desktop
 ``` 
-or into digital ocean k8s cluster:
+or into DigitalOcean k8s cluster:
 ```
 kubectl config use-context do-nyc1-ticketing
 ```
-Switched to context "do-nyc1-ticketing".
 
+Now, we switched to context "do-nyc1-ticketing", and create two secrets, json web token and stripe API keys, respectively
 
 
 ```
@@ -58,7 +58,7 @@ kubectl create secret generic jwt-secret  --from-literal=JWT_KEY=sadf78sfas8f76f
 ```
 kubectl create secret generic stripe-secret --from-literal=STRIPE_KEY=YOURKEY
 ```
-
+Also, we need to apply NGINX Ingress Controller in k8s cluster
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/do/deploy.yaml
 ```
