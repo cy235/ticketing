@@ -27,11 +27,18 @@ then initialize the doctl <br>
 ```
 doctl auth init -t a0ca66ad811be78ebaaa2b831d6619f8e12a396c741a0907dd4f6ed12cac1682 
 ```
-save the name of Kubernetes cluster in the config file <br>
+connect the k8s cluster and save the name of Kubernetes cluster in the config file. <br>
 ```
 doctl kubernetes cluster kubeconfig save ticketing 
 ```
-
+Now you can observe the nodes in the k8s cluster <br>
+```
+$ kubectl get nodes
+NAME                   STATUS   ROLES    AGE     VERSION
+pool-1kexitqkv-3fel7   Ready    <none>   3m53s   v1.17.5
+pool-1kexitqkv-3felc   Ready    <none>   3m52s   v1.17.5
+pool-1kexitqkv-3felm   Ready    <none>   3m56s   v1.17.5
+```
 Then go to github and add the `DOCKER_USERNAME` and `DOCKER_PASSWORD` in the secretes
 add `DIGITALOCEAN_ACCESS_TOKEN` in the secretes,
 where `DIGITALOCEAN_ACCESS_TOKEN` value is created under the DigitalOcean API token named `github_access_token`.
