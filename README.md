@@ -4,9 +4,9 @@ In this project, we build a ticket ordering web application with React, Node, Ex
 ![image](https://github.com/cy235/ticketing/blob/master/images/local_git.jpg)
 
 This web application consits of 6 microservices, i.e., `orders`,`tickets`,`payments`,`client`, `expiration` (the ordering will be expired if the information is not filled within the given time), and `auth`(authentication), which are shown in the following figure
-<p align="center"> 
+
 ![image](https://github.com/cy235/ticketing/blob/master/images/micro_service.jpg)
-</p> 
+
 The deployment plan is shown in the following figure
 ![image](https://github.com/cy235/ticketing/blob/master/images/microservice_chart%20(1).jpg)
 where each single micro service can be continuously built and deployed, the infra file is responsible for deploying the whole applcation (including all micro services). 
