@@ -55,16 +55,17 @@ or into DigitalOcean k8s cluster:
 kubectl config use-context do-nyc1-ticketing
 ```
 
-Now, we switched to context `do-nyc1-ticketing`, and create two secrets, json web token and stripe API keys, respectively
-
+Now, we switched to context `do-nyc1-ticketing`, and create two secrets, json web token (JWT) and Stripe API keys, respectively
 
 ```
 kubectl create secret generic jwt-secret  --from-literal=JWT_KEY=sadf78sfas8f76f86faf6
 ```
-
+you can get your JWT by entering a random sequence. <br>
 ```
 kubectl create secret generic stripe-secret --from-literal=STRIPE_KEY=YOURKEY
 ```
+you can get Stripe API keys in this link: `https://dashboard.stripe.com/test/dashboard`.<br>
+
 Also, we need to apply NGINX Ingress Controller in k8s cluster
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/do/deploy.yaml
