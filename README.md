@@ -64,7 +64,7 @@ you can get your JWT by entering a random sequence. <br>
 ```
 kubectl create secret generic stripe-secret --from-literal=STRIPE_KEY=YOURKEY
 ```
-you can get Stripe API keys in this link: `https://dashboard.stripe.com/test/dashboard`.<br>
+you can get Stripe API keys in this link: https://dashboard.stripe.com/test/dashboard.<br>
 
 Also, we need to apply NGINX Ingress Controller in k8s cluster
 ```
