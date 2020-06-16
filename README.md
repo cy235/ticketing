@@ -1,15 +1,16 @@
-# ticketing web application
-In this project, we build a ticket ordering web application built with React, Node, Express, and MongoDB, which consisting of 6 microservices, we leverage Github to continuously integrate the web application images and delivered them into the Docker Hub, then continuously deployed them into the Kubernetes cluster. The following figure shows development workflow
-
+# Build Ticketing Web Application with Microservices 
+## Overview
+In this project, we build a ticket ordering web application with React, Node, Express, and MongoDB, which consisting of 6 microservices. We leverage Github to continuously integrate the web application images and delivered them into the Docker Hub, then continuously deployed them into the Kubernetes cluster. The following figure shows the development workflow
 ![image](https://github.com/cy235/ticketing/blob/master/images/local_git.jpg)
 
-This web application consits of 6 micro services, i.e., `orders`,`tickets`,`payments`,`client`, `expiration` (the ordering will be expired if the information is not filled within the given time), `auth`(authentication), which are shown in the following figure
+This web application consits of 6 microservices, i.e., `orders`,`tickets`,`payments`,`client`, `expiration` (the ordering will be expired if the information is not filled within the given time), and `auth`(authentication), which are shown in the following figure
 ![image](https://github.com/cy235/ticketing/blob/master/images/micro_service.jpg)
 
 The deployment plan is shown in the following figure
 ![image](https://github.com/cy235/ticketing/blob/master/images/microservice_chart%20(1).jpg)
 where each single micro service can be continuously built and deployed, the infra file is responsible for deploying the whole applcation (including all micro services). 
 
+## Setup
 We employ the DigitalOcean as our Iaas provider.
 First we need to create a Kubernetes cluster in DigitalOcean, then get the token from API token from DigitalOcean, which is named as doctl2
 `a0ca66ad811be78ebaaa2b831d6619f8e12a396c741a0907dd4f6ed12cac1682`
@@ -52,6 +53,8 @@ kubectl create secret generic stripe-secret --from-literal=STRIPE_KEY=YOURKEY
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/do/deploy.yaml
 ```
+
+## CI/CD
 Initialization of CI/CD pipeline: 
 * update the `deploy-manifests.yaml`,`infra`, and dev branch files `auth`, `client`, `expiration`, `tickets`, `orders`, `payments` files respectively, and push them into dev branch, then create a pull request to merge the dev branch into the master branch
 
