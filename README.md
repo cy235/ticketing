@@ -7,7 +7,7 @@ This web application consits of 6 micro services, i.e., `orders`,`tickets`,`paym
 ![image](https://github.com/cy235/ticketing/blob/master/images/micro_service.jpg)
 
 The deployment plan is shown in the following figure
-![image](https://github.com/cy235/ticketing/blob/master/images/microservice_chart (1).jpg)
+![image](https://github.com/cy235/ticketing/blob/master/images/microservice_chart%20(1).jpg)
 where each single micro service can be continuously built and deployed, the infra file is responsible for deploying the whole applcation (including all micro services). 
 
 We employ the DigitalOcean as our Iaas provider.
