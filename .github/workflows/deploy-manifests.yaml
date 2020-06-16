@@ -1,4 +1,4 @@
-name: deploy-manifests  #####################final correct!!!
+name: deploy-manifests ##########annoying master hahaahaaaa
 
 on:
   push:
