@@ -19,7 +19,7 @@ The deployment plan is shown in the following figure
 
 where each single micro service can be continuously built and deployed, the infra file is responsible for deploying the whole applcation (including all micro services). 
 
-## Setup
+## Setup Kubernetes Cluster
 We employ the DigitalOcean as our Iaas provider. First we need to create a Kubernetes cluster in DigitalOcean, then get the token from API token from DigitalOcean, which is named as doctl2 `a0ca66ad811be78ebaaa2b831d6619f8e12a396c741a0907dd4f6ed12cac1682` <br>
 
 then initialize the doctl <br>
