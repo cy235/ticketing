@@ -2,7 +2,7 @@
 ## Overview
 In this project, we build a ticket ordering web application with React, Node, Express, and MongoDB, which consisting of 6 microservices. We leverage Github to continuously integrate the web application images and delivered them into the Docker Hub, then continuously deployed them into the Kubernetes cluster. The following figure shows the development workflow
 <p align="center">
-  <img width="460" height="300" src="https://github.com/cy235/ticketing/blob/master/images/local_git.jpg">
+  <img width="460" src="https://github.com/cy235/ticketing/blob/master/images/local_git.jpg">
 </p>
 
 
