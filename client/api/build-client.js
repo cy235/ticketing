@@ -5,7 +5,7 @@ export default ({ req }) => {
     // We are on the server
 
     return axios.create({
-      baseURL: 'http://www.ticket-ordering-app.xyz',
+      baseURL: 'http://www.insightdevops2020spring.club',
       headers: req.headers
     });
   } else {
