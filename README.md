@@ -70,6 +70,7 @@ Also, we need to apply NGINX Ingress Controller in k8s cluster
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/do/deploy.yaml
 ```
+and now you can find a load balancer is automatically created in DigitalOcean.
 
 ## CI/CD
 Initialization of CI/CD pipeline: 
