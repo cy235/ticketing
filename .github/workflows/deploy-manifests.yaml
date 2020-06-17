@@ -1,4 +1,4 @@
-name: deploy-manifests ##########annoying master @@@@@@???!!!gggg
+name: deploy-manifests ##########annoying master @@@@@@???!!!gggggood
 
 on:
   push:
