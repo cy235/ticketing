@@ -66,11 +66,7 @@ kubectl create secret generic stripe-secret --from-literal=STRIPE_KEY=YOURKEY
 ```
 you can get Stripe API keys in this link: https://dashboard.stripe.com/test/dashboard.<br>
 
-Also, we need to apply NGINX Ingress Controller in k8s cluster
-```
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/do/deploy.yaml
-```
-and now you can find a load balancer is automatically created in DigitalOcean.
+Also, we need to apply NGINX Ingress Controller in k8s cluster on DigitalOcean dashboard, and now you can find a load balancer is automatically created in DigitalOcean.
 
 ## CI/CD
 In this project, we leverage **Github Actions** to build a CI/CD pipeline. <br>
