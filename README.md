@@ -71,12 +71,12 @@ Also, we need to apply NGINX Ingress Controller in k8s cluster on DigitalOcean d
 ## CI/CD
 In this project, we leverage **Github Actions** to build a CI/CD pipeline. <br>
 
-You can update the `deploy-manifests.yaml`,`infra`, and dev branch files `auth`, `client`, `expiration`, `tickets`, `orders`, `payments` files respectively, and push them into dev branch, then create a pull request to merge the dev branch into the master branch, all the updated files will be integrated and push into the DockerHub, and deployed into k8s cluster automatically. When the images are first pushed in to the DockerHub, they are private, **CHANGE ALL THE PUSHED IMAGES IN THE DOCKERHUB INTO PUBLIC** <br>
+You can update the files `ticketing/.github/workflows/deploy-manifests.yaml`,`infra`, and dev branch files `auth`, `client`, `expiration`, `tickets`, `orders`, `payments` files respectively, and push them into dev branch, then create a pull request to merge the dev branch into the master branch, all the updated files will be integrated and push into the DockerHub, and deployed into k8s cluster automatically. When the images are first pushed in to the DockerHub, they are private, **CHANGE ALL THE PUSHED IMAGES IN THE DOCKERHUB INTO PUBLIC** <br>
 
 You can modify any files in dev branch, make a pull request, it will fulfill the test automatically, and then merger the pull request, the updated files will be uploaded into DockerHub and deployed into k8s cluster automatically.  
 
 If you only deploy images from DockerHub to k8s:
-update the `deploy-manifests.yaml` and the `infra` files respectively, and push them into master branch.
+update the `ticketing/.github/workflows/deploy-manifests.yaml` and the `infra` files respectively, and push them into master branch.
 
 
 If you want to delete all the deployments in k8s
