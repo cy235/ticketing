@@ -39,8 +39,15 @@ router.post(
     );
 
     // Store it on session object
+//     req.session = {
+//       jwt: userJwt,
+//     };
+    
     req.session = {
       jwt: userJwt,
+      isNew: true,
+      isChanged: false,
+      isPopulated: false
     };
 
     res.status(201).send(user);
