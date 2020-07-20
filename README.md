@@ -20,12 +20,12 @@ The deployment plan is shown in the following figure
 where each single micro service can be continuously built and deployed, the infra file is responsible for deploying the whole applcation (including all micro services). 
 
 ## Setup Kubernetes Cluster
-We employ the DigitalOcean as our Iaas provider. First we need to create a Kubernetes cluster in DigitalOcean, then get the token from API token from DigitalOcean, which is named as doctl2 `a0ca66ad811be78ebaaa2b831d6619f8e12a396c741a0907dd4f6ed12cac1682` <br>
+We employ the DigitalOcean as our Iaas provider. First we need to create a Kubernetes cluster in DigitalOcean, then get the token from API token from DigitalOcean, which is named as doctl2 `7414c7733fb08f4559e3ec631973a2e87623380c99e2f2e61a030ad56131fa88` <br>
 
 then initialize the doctl <br>
 
 ```
-doctl auth init -t a0ca66ad811be78ebaaa2b831d6619f8e12a396c741a0907dd4f6ed12cac1682 
+doctl auth init -t 7414c7733fb08f4559e3ec631973a2e87623380c99e2f2e61a030ad56131fa88 
 ```
 connect the k8s cluster and save the name of Kubernetes cluster in the config file. <br>
 ```
@@ -66,21 +66,17 @@ kubectl create secret generic stripe-secret --from-literal=STRIPE_KEY=YOURKEY
 ```
 you can get Stripe API keys in this link: https://dashboard.stripe.com/test/dashboard.<br>
 
-Also, we need to apply NGINX Ingress Controller in k8s cluster
-```
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/do/deploy.yaml
-```
+Also, we need to apply NGINX Ingress Controller in k8s cluster on DigitalOcean dashboard, and now you can find a load balancer is automatically created in DigitalOcean.
 
 ## CI/CD
-Initialization of CI/CD pipeline: 
-* update the `deploy-manifests.yaml`,`infra`, and dev branch files `auth`, `client`, `expiration`, `tickets`, `orders`, `payments` files respectively, and push them into dev branch, then create a pull request to merge the dev branch into the master branch
+In this project, we leverage **Github Actions** to build a CI/CD pipeline. <br>
 
-**MAKE SURE ALL THE PUSHED IMAGES IN THE DOCKERHUB ARE PUBLIC**
+You can update the files `ticketing/.github/workflows/deploy-manifests.yaml`,`infra`, and dev branch files `auth`, `client`, `expiration`, `tickets`, `orders`, `payments` files respectively, and push them into dev branch, then create a pull request to merge the dev branch into the master branch, all the updated files will be integrated and push into the DockerHub, and deployed into k8s cluster automatically. When the images are first pushed in to the DockerHub, they are private, **CHANGE ALL THE PUSHED IMAGES IN THE DOCKERHUB INTO PUBLIC** <br>
 
 You can modify any files in dev branch, make a pull request, it will fulfill the test automatically, and then merger the pull request, the updated files will be uploaded into DockerHub and deployed into k8s cluster automatically.  
 
-If deploy images from DockerHub to k8s only:
-update the `deploy-manifests.yaml` and the `infra` files respectively, and push them into master branch
+If you only deploy images from DockerHub to k8s:
+update the `ticketing/.github/workflows/deploy-manifests.yaml` and the `infra` files respectively, and push them into master branch.
 
 
 If you want to delete all the deployments in k8s
